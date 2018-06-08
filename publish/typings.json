@@ -1,0 +1,9 @@
+{
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160801161248",
+    "line-reader": "registry:dt/line-reader#0.0.0+20160510002910"
+  },
+  "devDependencies": {
+    "crc": "registry:dt/crc#3.4.0+20161220195540"
+  }
+}

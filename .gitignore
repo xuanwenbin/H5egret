@@ -1,0 +1,15 @@
+.svn
+proto2one/node_modules
+proto2one/proto/*
+proto2one/cfg/*
+txt2json/node_modules
+txt2json/json
+txt2json/txt/*
+publish/node_modules
+bin-debug
+H5frame/bin-release/web
+uploadCloud/node_modules
+uploadCloud/config.json
+main_wxgame
+publish2
+

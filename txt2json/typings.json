@@ -1,0 +1,12 @@
+{
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160801161248"
+  },
+  "globalDevDependencies": {
+    "jszip": "registry:dt/jszip#0.0.0+20170110193107",
+    "line-reader": "registry:dt/line-reader#0.0.0+20160510002910"
+  },
+  "devDependencies": {
+    "iconv-lite": "registry:dt/iconv-lite#0.0.0+20161005205115"
+  }
+}

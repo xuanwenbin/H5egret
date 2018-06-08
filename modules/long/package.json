@@ -1,0 +1,15 @@
+{
+	"name": "egret",
+	"version": "3.1.0",
+	"modules": [
+		{
+			"name": "long",
+			"description": "long",
+			"files": [
+		        "long.min.js",
+		        "long.d.ts"
+			],
+			"root": "src"
+		}
+	]
+}

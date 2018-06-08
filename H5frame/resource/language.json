@@ -1,0 +1,91 @@
+{
+    "common": {
+        "conifrm_no": "取消",
+        "conifrm_yes": "确认",
+        "conifrm_yes_recharge": "充值",
+        "conifrm_title": "提示",
+        "reward_title": "奖励",
+        "conifrm_recharge": "钻石不足{0}。点击确认跳转充值界面。",
+        "conifrm_socketClose": "网络异常，请刷新界面尝试重新登录。",
+        "buy_complate": "购买成功",
+        "buy_error": "购买错误",
+        "stringLen_error": "超出规定字数。最大允许{0}个文字。"
+    },
+    "LoadingRes": {
+        "l00000001": "",
+        "skipvideo": "クリックでスキップ=>"
+    },
+    "battle": {
+        "auto": "自动",
+        "initiative": "手动"
+    },
+    "missionStage": {
+        "name_prefix": "第{0}话",
+        "discover_desc": "基础奖励（每5秒）：金币{0}，经验{1}",
+        "no_limit": "无限制",
+        "sweep_count": "扫荡{0}次",
+        "sweep_times": "第{0}次",
+        "reset_cost": "是否花费<font color='#f85e9f'>{0}</font>   重置该关卡可挑战次数",
+        "reset_times": "本关卡剩余重置次数：<font color='#f85e9f'>{0}</font>次"
+    },
+    "shop": {
+        "freeRefreshNumber": "免费刷新次数：",
+        "todayRefreshNumber": "今日剩余次数：",
+        "refreshItemNumber": "当前刷新令：",
+        "remainingNumber": "今日可购买<font color=0xf85e9f>{0}</font>次",
+        "haveNumber": "当前拥有: {0}"
+    },
+    "summon": {
+        "countdown_advanced": "{0}",
+        "countdown_normal": "{0} ({1}/{2})",
+        "no_times": "今日免费次数已用尽",
+        "decompose_frags": "已拥有该式神，自动转化为{0}碎片 x {1}"
+    },
+    "spiritType": {
+        "l0": "攻击",
+        "l1": "防御",
+        "l2": "控制",
+        "l3": "辅助"
+    },
+    "talentType": {
+        "l0": "攻击",
+        "l1": "防御",
+        "l2": "生命",
+        "l3": "命中",
+        "l4": "闪避",
+        "l5": "暴击",
+        "l6": "坚韧",
+        "l7": "抵抗"
+    },
+    "skillTypeNameStr": {
+        "l0": "普攻技能",
+        "l1": "主动技能",
+        "l2": "怒气技能",
+        "l3": "队长技能"
+    },
+    "spirit": {
+        "lineupItemActive": "{0}级解锁",
+        "reformExplain": "4.本次转生后式神的{0}增加{1}伤害"
+    },
+    "equip": {
+        "equipDec": "该装备已经装备于{0}，确认更换该装备吗？"
+    },
+    "study": {
+        "preStudyLevel": "{0}升至{1}级",
+        "needUserLevel": "用户等级{0}级以上",
+        "studyLable":"研究:",
+        "studyFree":"空闲中",
+        "studySuccess":" <font color='#f85e9f'>{0}</font> 研究成功"
+    },
+    "exerciseArea": {
+        "sweep_count": "扫荡{0}次",
+        "sweep_times": "第{0}次",
+        "flr1": "壹层",
+        "flr2": "贰层",
+        "flr3": "叁层",
+        "flr4": "肆层",
+        "flr5": "伍层",
+        "flr6": "陆层",
+        "flr7": "柒层"
+    }
+}

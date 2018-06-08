@@ -1,0 +1,43 @@
+#!/usr/bin/expect
+
+set BASE_DIR .
+
+set LOCAL_DIR "$BASE_DIR/../warships/bin-release/web/1"
+
+set REMOTE_DIR "root@123.207.66.245:/usr/share/nginx/html/ship-loader-test"
+set REMOTE_PASSWORD "dmmh5ship"
+
+spawn scp -C -r $LOCAL_DIR/libs $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact
+
+spawn scp -C -r $LOCAL_DIR/promise $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact
+
+spawn scp -C -r $LOCAL_DIR/resource $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact
+
+spawn scp -C -r $LOCAL_DIR/favicon.ico $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact
+
+spawn scp -C -r $LOCAL_DIR/main.min.js $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact
+
+spawn scp -C -r $LOCAL_DIR/manifest.json $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact
+
+spawn scp -C -r $LOCAL_DIR/index.html $REMOTE_DIR
+expect "*password*"
+send "$REMOTE_PASSWORD\r"
+interact

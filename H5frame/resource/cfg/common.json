@@ -1,0 +1,2122 @@
+{
+  "nested": {
+    "BattleAction": {
+      "fields": {
+        "attackid": {
+          "type": "string",
+          "id": 1
+        },
+        "attackrole": {
+          "type": "int32",
+          "id": 2
+        },
+        "skillid": {
+          "type": "int32",
+          "id": 3
+        },
+        "skillparam": {
+          "type": "int32",
+          "id": 4
+        },
+        "targetlist": {
+          "rule": "repeated",
+          "type": "BattleEnemyUnit",
+          "id": 5
+        },
+        "owneffectlist": {
+          "rule": "repeated",
+          "type": "BattleSelfUnit",
+          "id": 6
+        },
+        "allspiritslist": {
+          "rule": "repeated",
+          "type": "BattleOneUnit",
+          "id": 7
+        },
+        "currenttime": {
+          "type": "string",
+          "id": 8
+        }
+      }
+    },
+    "BattleEnemyUnit": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1
+        },
+        "role": {
+          "type": "int32",
+          "id": 2
+        },
+        "cri": {
+          "type": "bool",
+          "id": 7
+        },
+        "hit": {
+          "type": "bool",
+          "id": 8
+        },
+        "damage": {
+          "type": "int32",
+          "id": 9
+        },
+        "shield": {
+          "type": "int32",
+          "id": 10
+        },
+        "enemyeffecttype": {
+          "type": "int32",
+          "id": 11
+        },
+        "enemyeffectvalue": {
+          "type": "int32",
+          "id": 12
+        }
+      }
+    },
+    "BattleSelfUnit": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1
+        },
+        "owneffecttype": {
+          "type": "int32",
+          "id": 10
+        },
+        "owneffectparam": {
+          "type": "int32",
+          "id": 11
+        }
+      }
+    },
+    "BattleOneUnit": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1
+        },
+        "role": {
+          "type": "int32",
+          "id": 2
+        },
+        "hp": {
+          "type": "int32",
+          "id": 3
+        },
+        "maxhp": {
+          "type": "int32",
+          "id": 4
+        },
+        "furypoint": {
+          "type": "int32",
+          "id": 5
+        },
+        "slideacctime": {
+          "type": "int32",
+          "id": 6
+        },
+        "vertigotime": {
+          "type": "int32",
+          "id": 7
+        },
+        "shieldtime": {
+          "type": "int32",
+          "id": 8
+        },
+        "shieldvalue": {
+          "type": "int32",
+          "id": 9
+        }
+      }
+    },
+    "BattleInfo": {
+      "fields": {
+        "battleid": {
+          "type": "string",
+          "id": 1
+        },
+        "battletype": {
+          "type": "int32",
+          "id": 2
+        },
+        "attackTac": {
+          "type": "TacticInfo",
+          "id": 3
+        },
+        "defendTac": {
+          "type": "TacticInfo",
+          "id": 4
+        },
+        "actionlist": {
+          "rule": "repeated",
+          "type": "BattleAction",
+          "id": 5
+        },
+        "score": {
+          "type": "int32",
+          "id": 6
+        },
+        "isauto": {
+          "type": "bool",
+          "id": 7
+        }
+      }
+    },
+    "TacticInfo": {
+      "fields": {
+        "uid": {
+          "type": "string",
+          "id": 1
+        },
+        "leaderid": {
+          "type": "string",
+          "id": 2,
+          "options": {
+            "default": "0"
+          }
+        },
+        "spiritslist": {
+          "rule": "repeated",
+          "type": "BattleSpirits",
+          "id": 3
+        }
+      }
+    },
+    "BattleSpirits": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1,
+          "options": {
+            "default": "0"
+          }
+        },
+        "spiritsid": {
+          "type": "int32",
+          "id": 2
+        },
+        "skillid": {
+          "type": "int32",
+          "id": 3
+        },
+        "slideskillid": {
+          "type": "int32",
+          "id": 4
+        },
+        "furyskillid": {
+          "type": "int32",
+          "id": 5
+        },
+        "leaderskillid": {
+          "type": "int32",
+          "id": 6
+        },
+        "talentid": {
+          "type": "int32",
+          "id": 7
+        },
+        "upgrade": {
+          "type": "int32",
+          "id": 8
+        },
+        "reformed": {
+          "type": "int32",
+          "id": 9
+        },
+        "skin": {
+          "type": "int32",
+          "id": 10
+        },
+        "hp": {
+          "type": "int32",
+          "id": 11
+        },
+        "maxhp": {
+          "type": "int32",
+          "id": 12
+        },
+        "speed": {
+          "type": "int32",
+          "id": 13
+        },
+        "furypoint": {
+          "type": "int32",
+          "id": 14
+        },
+        "propertylist": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 15,
+          "options": {
+            "packed": false
+          }
+        },
+        "basepropertylist": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 16,
+          "options": {
+            "packed": false
+          }
+        },
+        "buffpropertylist": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 17,
+          "options": {
+            "packed": false
+          }
+        },
+        "slideacctime": {
+          "type": "int32",
+          "id": 18
+        },
+        "vertigotime": {
+          "type": "int32",
+          "id": 19
+        },
+        "shieldtime": {
+          "type": "int32",
+          "id": 20
+        },
+        "shieldvalue": {
+          "type": "int32",
+          "id": 21
+        }
+      }
+    },
+    "BattleSettle": {
+      "fields": {
+        "star": {
+          "type": "int32",
+          "id": 1
+        },
+        "gold": {
+          "type": "int32",
+          "id": 2
+        },
+        "exp": {
+          "type": "int32",
+          "id": 3
+        },
+        "firstpass": {
+          "type": "bool",
+          "id": 4
+        },
+        "droplist": {
+          "type": "MDropList",
+          "id": 5
+        }
+      }
+    },
+    "MDropData": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "index": {
+          "type": "int32",
+          "id": 2
+        },
+        "amount": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "MDropList": {
+      "fields": {
+        "drops": {
+          "rule": "repeated",
+          "type": "MDropData",
+          "id": 1
+        }
+      }
+    },
+    "DceAllEquipmentInfo": {
+      "fields": {}
+    },
+    "DceBattleOpt": {
+      "fields": {
+        "battleid": {
+          "type": "string",
+          "id": 1
+        },
+        "opt_type": {
+          "type": "int32",
+          "id": 2
+        },
+        "id": {
+          "type": "string",
+          "id": 3
+        },
+        "param": {
+          "type": "int32",
+          "id": 4
+        },
+        "transparam": {
+          "type": "int32",
+          "id": 5
+        }
+      }
+    },
+    "DceBattleStart": {
+      "fields": {
+        "targetID": {
+          "type": "string",
+          "id": 1
+        },
+        "type": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceBattleSweep": {
+      "fields": {
+        "targetID": {
+          "type": "string",
+          "id": 1
+        },
+        "type": {
+          "type": "int32",
+          "id": 2
+        },
+        "times": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DceChangeSpiritSkin": {
+      "fields": {
+        "tid": {
+          "type": "int32",
+          "id": 1
+        },
+        "skin_id": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceCombineEquipmentDebris": {
+      "fields": {
+        "id": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 1,
+          "options": {
+            "packed": false
+          }
+        }
+      }
+    },
+    "DceCombineProto": {
+      "fields": {
+        "proto_list": {
+          "rule": "repeated",
+          "type": "string",
+          "id": 1
+        }
+      }
+    },
+    "DceCombineSpiritDebris": {
+      "fields": {
+        "id": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 1,
+          "options": {
+            "packed": false
+          }
+        },
+        "type": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceDecreeShopOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "index": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceDevilTowerOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DceDugeonOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DceEquipmentDebrisList": {
+      "fields": {}
+    },
+    "DceEquipmentEnhance": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        }
+      }
+    },
+    "DceEquipmentGearUp": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        },
+        "pos": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceEquipmentRefine": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        }
+      }
+    },
+    "DceHeartbeat": {
+      "fields": {}
+    },
+    "DceInstituteOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "instituteid": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceMailOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "mailtype": {
+          "type": "int32",
+          "id": 2
+        },
+        "id": {
+          "type": "string",
+          "id": 3
+        },
+        "receiver": {
+          "type": "string",
+          "id": 4
+        },
+        "receiveruid": {
+          "type": "string",
+          "id": 5
+        },
+        "content": {
+          "type": "string",
+          "id": 6
+        }
+      }
+    },
+    "DceResetLeader": {
+      "fields": {
+        "pos": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DceShopOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "shopid": {
+          "type": "int32",
+          "id": 2
+        },
+        "count": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DceShowFormationInfo": {
+      "fields": {}
+    },
+    "DceShowSingleSpiritInfo": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1
+        }
+      }
+    },
+    "DceShowSpiritInfo": {
+      "fields": {
+        "msgType": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DceSpiritDebrisList": {
+      "fields": {}
+    },
+    "DceSpiritDevelop": {
+      "fields": {
+        "id": {
+          "type": "int32",
+          "id": 1
+        },
+        "action": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceStageAward": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "chapterid": {
+          "type": "int32",
+          "id": 2
+        },
+        "sceneid": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DceStageExplore": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DceStageInfo": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "chapterid": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceStageReset": {
+      "fields": {
+        "stageid": {
+          "type": "int32",
+          "id": 1
+        },
+        "type": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "StorageType": {
+      "values": {
+        "INVALID_BAG": 0,
+        "ITEM_BAG": 1
+      }
+    },
+    "DceStorageList": {
+      "fields": {
+        "type": {
+          "type": "StorageType",
+          "id": 1
+        }
+      }
+    },
+    "DceSummon": {
+      "fields": {
+        "id": {
+          "type": "int32",
+          "id": 1
+        },
+        "mode": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DceSummonInterface": {
+      "fields": {}
+    },
+    "DceSwitchFormation": {
+      "fields": {
+        "pos1": {
+          "type": "int32",
+          "id": 1
+        },
+        "pos2": {
+          "type": "int32",
+          "id": 2
+        },
+        "tid": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DceTownPatrolOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "param": {
+          "type": "int32",
+          "id": 2
+        },
+        "hoepos": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 3,
+          "options": {
+            "packed": false
+          }
+        }
+      }
+    },
+    "DceUseItem": {
+      "fields": {
+        "tid": {
+          "type": "int32",
+          "id": 1
+        },
+        "amount": {
+          "type": "int32",
+          "id": 2
+        },
+        "param": {
+          "type": "int32",
+          "id": 3
+        },
+        "msgType": {
+          "type": "int32",
+          "id": 4
+        }
+      }
+    },
+    "DceUserInfo": {
+      "fields": {}
+    },
+    "DseAllEquipmentInfo": {
+      "fields": {
+        "infos": {
+          "rule": "repeated",
+          "type": "EquipmentInfo",
+          "id": 1
+        }
+      }
+    },
+    "EquipmentInfo": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        },
+        "tid": {
+          "type": "int32",
+          "id": 2
+        },
+        "enhanceLevel": {
+          "type": "int32",
+          "id": 3
+        },
+        "refineLevle": {
+          "type": "int32",
+          "id": 4
+        },
+        "pos": {
+          "type": "int32",
+          "id": 5
+        },
+        "prop_value": {
+          "type": "int32",
+          "id": 6
+        }
+      }
+    },
+    "DseAllSpiritInfo": {
+      "fields": {
+        "soldiers": {
+          "rule": "repeated",
+          "type": "DseSingleSpiritInfo",
+          "id": 1
+        }
+      }
+    },
+    "DseSingleSpiritInfo": {
+      "fields": {
+        "tid": {
+          "type": "int32",
+          "id": 1
+        },
+        "maxhp": {
+          "type": "int32",
+          "id": 2
+        },
+        "attack": {
+          "type": "int32",
+          "id": 3
+        },
+        "defence": {
+          "type": "int32",
+          "id": 4
+        },
+        "speed": {
+          "type": "int32",
+          "id": 5
+        },
+        "isCaptain": {
+          "type": "bool",
+          "id": 6
+        },
+        "level": {
+          "type": "int32",
+          "id": 7
+        },
+        "reformed": {
+          "type": "int32",
+          "id": 8
+        },
+        "breakthrough": {
+          "type": "int32",
+          "id": 9
+        },
+        "upgraded": {
+          "type": "int32",
+          "id": 10
+        },
+        "awakened": {
+          "type": "int32",
+          "id": 11
+        },
+        "talent": {
+          "type": "int32",
+          "id": 12
+        },
+        "power": {
+          "type": "int32",
+          "id": 13
+        },
+        "exp": {
+          "type": "int32",
+          "id": 14
+        },
+        "skin": {
+          "type": "int32",
+          "id": 15
+        },
+        "skin_unlocked": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 16,
+          "options": {
+            "packed": false
+          }
+        }
+      }
+    },
+    "DseAuthState": {
+      "fields": {
+        "pass": {
+          "rule": "required",
+          "type": "bool",
+          "id": 1
+        },
+        "type": {
+          "rule": "required",
+          "type": "int32",
+          "id": 2
+        },
+        "leftMin": {
+          "rule": "required",
+          "type": "int32",
+          "id": 3
+        },
+        "time": {
+          "rule": "required",
+          "type": "int32",
+          "id": 4
+        },
+        "zone": {
+          "rule": "required",
+          "type": "int32",
+          "id": 5
+        },
+        "uid": {
+          "type": "string",
+          "id": 6
+        }
+      }
+    },
+    "DseBattleOpt": {
+      "fields": {
+        "opt_type": {
+          "type": "int32",
+          "id": 1
+        },
+        "id": {
+          "type": "string",
+          "id": 2
+        },
+        "param": {
+          "type": "int32",
+          "id": 3
+        },
+        "res": {
+          "type": "int32",
+          "id": 4
+        },
+        "action": {
+          "rule": "repeated",
+          "type": "BattleAction",
+          "id": 5
+        },
+        "isover": {
+          "type": "bool",
+          "id": 6
+        },
+        "battleinfo": {
+          "type": "BattleInfo",
+          "id": 7
+        },
+        "sendclient": {
+          "type": "bool",
+          "id": 8
+        },
+        "BattleSettle": {
+          "type": "BattleSettle",
+          "id": 9
+        },
+        "transparam": {
+          "type": "int32",
+          "id": 10
+        },
+        "satifycon": {
+          "type": "bool",
+          "id": 11
+        }
+      }
+    },
+    "DseBattleStart": {
+      "fields": {
+        "targetID": {
+          "type": "string",
+          "id": 1
+        },
+        "battleinfo": {
+          "type": "BattleInfo",
+          "id": 2
+        },
+        "result": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DseBattleSweep": {
+      "fields": {
+        "res": {
+          "type": "int32",
+          "id": 1
+        },
+        "targetID": {
+          "type": "string",
+          "id": 2
+        },
+        "type": {
+          "type": "int32",
+          "id": 3
+        },
+        "BattleSettle": {
+          "rule": "repeated",
+          "type": "BattleSettle",
+          "id": 4
+        }
+      }
+    },
+    "DseChangeSpiritSkin": {
+      "fields": {
+        "tid": {
+          "type": "int32",
+          "id": 1
+        },
+        "skin_id": {
+          "type": "int32",
+          "id": 2
+        },
+        "code": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DseCombineEquipmentDebris": {
+      "fields": {
+        "id": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 1,
+          "options": {
+            "packed": false
+          }
+        },
+        "code": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DseCombineProto": {
+      "fields": {
+        "res": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DseCombineSpiritDebris": {
+      "fields": {
+        "id": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 1,
+          "options": {
+            "packed": false
+          }
+        },
+        "code": {
+          "type": "int32",
+          "id": 2
+        },
+        "type": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DecreeShop": {
+      "fields": {
+        "freetimes": {
+          "type": "int32",
+          "id": 1
+        },
+        "lastrefreshtime": {
+          "type": "string",
+          "id": 2
+        },
+        "remainrefreshtimes": {
+          "type": "int32",
+          "id": 3
+        },
+        "shoplist": {
+          "rule": "repeated",
+          "type": "ShopUnit",
+          "id": 4
+        }
+      }
+    },
+    "DseDecreeShopOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "index": {
+          "type": "int32",
+          "id": 2
+        },
+        "res": {
+          "type": "int32",
+          "id": 3
+        },
+        "decreeshop": {
+          "type": "DecreeShop",
+          "id": 4
+        }
+      }
+    },
+    "ShopUnit": {
+      "fields": {
+        "shopid": {
+          "type": "int32",
+          "id": 1
+        },
+        "count": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DevilTowerData": {
+      "fields": {
+        "curlayer": {
+          "type": "int32",
+          "id": 1
+        },
+        "maxlayer": {
+          "type": "int32",
+          "id": 2
+        },
+        "losetimes": {
+          "type": "int32",
+          "id": 3
+        },
+        "buychallenge": {
+          "type": "int32",
+          "id": 4
+        },
+        "buyreset": {
+          "type": "int32",
+          "id": 5
+        },
+        "sweepstart": {
+          "type": "string",
+          "id": 6
+        }
+      }
+    },
+    "DseDevilTowerOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "res": {
+          "type": "int32",
+          "id": 2
+        },
+        "deviltower": {
+          "type": "DevilTowerData",
+          "id": 3
+        }
+      }
+    },
+    "DugeonItem": {
+      "fields": {
+        "process": {
+          "type": "int32",
+          "id": 1
+        },
+        "remaintimes": {
+          "type": "int32",
+          "id": 2
+        },
+        "totaltimes": {
+          "type": "int32",
+          "id": 3
+        },
+        "stageids": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 4,
+          "options": {
+            "packed": false
+          }
+        }
+      }
+    },
+    "DugeonData": {
+      "fields": {
+        "alldugeon": {
+          "rule": "repeated",
+          "type": "DugeonItem",
+          "id": 1
+        }
+      }
+    },
+    "DseDugeonOpt": {
+      "fields": {
+        "res": {
+          "type": "int32",
+          "id": 1
+        },
+        "type": {
+          "type": "int32",
+          "id": 2
+        },
+        "dugeondata": {
+          "type": "DugeonData",
+          "id": 3
+        }
+      }
+    },
+    "DseEquipmentDebrisList": {
+      "fields": {
+        "items": {
+          "rule": "repeated",
+          "type": "MItem",
+          "id": 1
+        }
+      }
+    },
+    "MItem": {
+      "fields": {
+        "tid": {
+          "type": "int32",
+          "id": 1
+        },
+        "amount": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DseEquipmentEnhance": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        },
+        "code": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "DseEquipmentGearUp": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        },
+        "pos": {
+          "type": "int32",
+          "id": 2
+        },
+        "code": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DseEquipmentRefine": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        },
+        "code": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "SingleSoldier": {
+      "fields": {
+        "pos": {
+          "type": "int32",
+          "id": 1
+        },
+        "tid": {
+          "type": "int32",
+          "id": 2
+        },
+        "equips": {
+          "rule": "repeated",
+          "type": "EquipmentInfoLite",
+          "id": 3
+        }
+      }
+    },
+    "DseFormationInfo": {
+      "fields": {
+        "forms": {
+          "rule": "repeated",
+          "type": "SingleSoldier",
+          "id": 1
+        },
+        "captain_pos": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "EquipPos": {
+      "values": {
+        "WEAPON": 1,
+        "HEAD": 2,
+        "CHEST": 3,
+        "BOOT": 4
+      }
+    },
+    "EquipmentInfoLite": {
+      "fields": {
+        "oid": {
+          "type": "string",
+          "id": 1
+        },
+        "pos": {
+          "type": "EquipPos",
+          "id": 2
+        }
+      }
+    },
+    "DseHeartbeat": {
+      "fields": {
+        "time": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "InstituteItem": {
+      "fields": {
+        "id": {
+          "type": "int32",
+          "id": 1
+        },
+        "level": {
+          "type": "int32",
+          "id": 2
+        }
+      }
+    },
+    "InstituteList": {
+      "fields": {
+        "institutelist": {
+          "rule": "repeated",
+          "type": "InstituteItem",
+          "id": 1
+        }
+      }
+    },
+    "InstituteData": {
+      "fields": {
+        "allinstitute": {
+          "rule": "repeated",
+          "type": "InstituteList",
+          "id": 1
+        },
+        "instituteid": {
+          "type": "int32",
+          "id": 2
+        },
+        "finishtime": {
+          "type": "string",
+          "id": 3
+        },
+        "freesec": {
+          "type": "int32",
+          "id": 4
+        }
+      }
+    },
+    "DseInstituteOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "instituteid": {
+          "type": "int32",
+          "id": 2
+        },
+        "institute": {
+          "type": "InstituteData",
+          "id": 3
+        },
+        "res": {
+          "type": "int32",
+          "id": 4
+        }
+      }
+    },
+    "ItemSourceType": {
+      "values": {
+        "ITEM_SOURCE_NORMAL": 0,
+        "ITEM_SOURCE_TREASURE_CASE": 1,
+        "ITEM_SOURCE_GIFT": 2,
+        "ITEM_SOURCE_MULTI_DROP_CASE": 3,
+        "ITEM_SOURCE_PICK_GIFT": 4
+      }
+    },
+    "DseItemChange": {
+      "fields": {
+        "list": {
+          "type": "MDropList",
+          "id": 1
+        },
+        "source": {
+          "type": "ItemSourceType",
+          "id": 2
+        }
+      }
+    },
+    "ParamUnit": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "param": {
+          "type": "string",
+          "id": 2
+        }
+      }
+    },
+    "MailData": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1
+        },
+        "createtime": {
+          "type": "string",
+          "id": 2
+        },
+        "title": {
+          "type": "string",
+          "id": 3
+        },
+        "content": {
+          "type": "string",
+          "id": 4
+        },
+        "name": {
+          "type": "string",
+          "id": 5
+        },
+        "uid": {
+          "type": "string",
+          "id": 6
+        },
+        "paramlist": {
+          "rule": "repeated",
+          "type": "ParamUnit",
+          "id": 7
+        },
+        "reward": {
+          "type": "MDropList",
+          "id": 8
+        },
+        "isget": {
+          "type": "bool",
+          "id": 9
+        },
+        "isread": {
+          "type": "bool",
+          "id": 10
+        }
+      }
+    },
+    "DseMailOpt": {
+      "fields": {
+        "res": {
+          "type": "int32",
+          "id": 1
+        },
+        "type": {
+          "type": "int32",
+          "id": 2
+        },
+        "mailtype": {
+          "type": "int32",
+          "id": 3
+        },
+        "maillist": {
+          "rule": "repeated",
+          "type": "MailData",
+          "id": 4
+        },
+        "newcounts": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 5,
+          "options": {
+            "packed": false
+          }
+        }
+      }
+    },
+    "DseMainScreenReady": {
+      "fields": {}
+    },
+    "DseReformInfo": {
+      "fields": {
+        "spiritid": {
+          "type": "int32",
+          "id": 1
+        },
+        "endtime": {
+          "type": "string",
+          "id": 2
+        },
+        "interval": {
+          "type": "int32",
+          "id": 3
+        },
+        "costnum": {
+          "type": "int32",
+          "id": 4
+        }
+      }
+    },
+    "DseResetLeaderResult": {
+      "fields": {
+        "result": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DseShopOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "shopid": {
+          "type": "int32",
+          "id": 2
+        },
+        "count": {
+          "type": "int32",
+          "id": 3
+        },
+        "res": {
+          "type": "int32",
+          "id": 4
+        },
+        "buylist": {
+          "rule": "repeated",
+          "type": "ShopUnit",
+          "id": 5
+        }
+      }
+    },
+    "DseSpiritDebrisList": {
+      "fields": {
+        "items": {
+          "rule": "repeated",
+          "type": "MItem",
+          "id": 1
+        }
+      }
+    },
+    "DseSpiritDevelop": {
+      "fields": {
+        "id": {
+          "type": "int32",
+          "id": 1
+        },
+        "action": {
+          "type": "int32",
+          "id": 2
+        },
+        "code": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    },
+    "DseStageAward": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "chapterid": {
+          "type": "int32",
+          "id": 2
+        },
+        "sceneid": {
+          "type": "int32",
+          "id": 3
+        },
+        "res": {
+          "type": "int32",
+          "id": 4
+        }
+      }
+    },
+    "ExploreData": {
+      "fields": {
+        "starttime": {
+          "type": "string",
+          "id": 1
+        },
+        "maxendtime": {
+          "type": "string",
+          "id": 2
+        },
+        "totalgold": {
+          "type": "int32",
+          "id": 3
+        },
+        "totalexp": {
+          "type": "int32",
+          "id": 4
+        },
+        "interval": {
+          "type": "int32",
+          "id": 5
+        },
+        "goldonce": {
+          "type": "int32",
+          "id": 7
+        },
+        "exponce": {
+          "type": "int32",
+          "id": 8
+        },
+        "havedrop": {
+          "type": "bool",
+          "id": 9
+        }
+      }
+    },
+    "DseStageExplore": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "res": {
+          "type": "int32",
+          "id": 2
+        },
+        "info": {
+          "type": "ExploreData",
+          "id": 3
+        },
+        "gold": {
+          "type": "int32",
+          "id": 4
+        },
+        "exp": {
+          "type": "int32",
+          "id": 5
+        },
+        "droplist": {
+          "type": "MDropList",
+          "id": 6
+        }
+      }
+    },
+    "ChapterInfo": {
+      "fields": {
+        "chapterid": {
+          "type": "int32",
+          "id": 1
+        },
+        "nextstageid": {
+          "type": "int32",
+          "id": 2
+        },
+        "isaward": {
+          "type": "bool",
+          "id": 3
+        },
+        "scenelist": {
+          "rule": "repeated",
+          "type": "ChildInfo",
+          "id": 4
+        },
+        "lastjuniorstageid": {
+          "type": "int32",
+          "id": 5
+        }
+      }
+    },
+    "ChildInfo": {
+      "fields": {
+        "sceneid": {
+          "type": "int32",
+          "id": 1
+        },
+        "scenestar": {
+          "type": "int32",
+          "id": 2
+        },
+        "isaward": {
+          "type": "bool",
+          "id": 3
+        },
+        "stagelist": {
+          "rule": "repeated",
+          "type": "StageData",
+          "id": 4
+        }
+      }
+    },
+    "DseStageInfo": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "chapterinfo": {
+          "type": "ChapterInfo",
+          "id": 2
+        }
+      }
+    },
+    "StageData": {
+      "fields": {
+        "stageid": {
+          "type": "int32",
+          "id": 1
+        },
+        "star": {
+          "type": "int32",
+          "id": 2
+        },
+        "todaytimes": {
+          "type": "int32",
+          "id": 3
+        },
+        "todaybuy": {
+          "type": "int32",
+          "id": 4
+        }
+      }
+    },
+    "DseStageReset": {
+      "fields": {
+        "res": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "DseStorageList": {
+      "fields": {
+        "type": {
+          "type": "StorageType",
+          "id": 1
+        },
+        "items": {
+          "rule": "repeated",
+          "type": "MItem",
+          "id": 2
+        }
+      }
+    },
+    "DseSummon": {
+      "fields": {
+        "id": {
+          "type": "int32",
+          "id": 1
+        },
+        "mode": {
+          "type": "int32",
+          "id": 2
+        },
+        "code": {
+          "type": "int32",
+          "id": 3
+        },
+        "list": {
+          "type": "MDropList",
+          "id": 4
+        }
+      }
+    },
+    "SummonPool": {
+      "fields": {
+        "id": {
+          "type": "int32",
+          "id": 1
+        },
+        "free_used": {
+          "type": "int32",
+          "id": 2
+        },
+        "next_free": {
+          "type": "string",
+          "id": 3
+        }
+      }
+    },
+    "DseSummonInterface": {
+      "fields": {
+        "pools": {
+          "rule": "repeated",
+          "type": "SummonPool",
+          "id": 1
+        }
+      }
+    },
+    "DseSwitchFormation": {
+      "fields": {
+        "code": {
+          "type": "int32",
+          "id": 1
+        }
+      }
+    },
+    "TownPatrolInfo": {
+      "fields": {
+        "pos": {
+          "type": "int32",
+          "id": 1
+        },
+        "patrolspells": {
+          "type": "int32",
+          "id": 2
+        },
+        "lastrecovertime": {
+          "type": "string",
+          "id": 3
+        },
+        "isbuy": {
+          "type": "bool",
+          "id": 4
+        },
+        "slatelist": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 5,
+          "options": {
+            "packed": false
+          }
+        },
+        "canguess": {
+          "type": "bool",
+          "id": 6
+        },
+        "canhoeing": {
+          "type": "bool",
+          "id": 7
+        },
+        "finishtimes": {
+          "type": "int32",
+          "id": 8
+        },
+        "finishreward": {
+          "rule": "repeated",
+          "type": "int32",
+          "id": 9,
+          "options": {
+            "packed": false
+          }
+        }
+      }
+    },
+    "TownPatrolOneMove": {
+      "fields": {
+        "slatenum": {
+          "type": "int32",
+          "id": 1
+        },
+        "eventtype": {
+          "type": "int32",
+          "id": 2
+        },
+        "droplist": {
+          "type": "MDropList",
+          "id": 3
+        },
+        "farmland": {
+          "type": "MDropList",
+          "id": 4
+        },
+        "getgold": {
+          "type": "int32",
+          "id": 5
+        }
+      }
+    },
+    "DseTownPatrolOpt": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "res": {
+          "type": "int32",
+          "id": 2
+        },
+        "param": {
+          "type": "int32",
+          "id": 3
+        },
+        "guessres": {
+          "type": "int32",
+          "id": 4
+        },
+        "optiondroplist": {
+          "type": "MDropList",
+          "id": 5
+        },
+        "movelist": {
+          "rule": "repeated",
+          "type": "TownPatrolOneMove",
+          "id": 6
+        },
+        "patrolinfo": {
+          "type": "TownPatrolInfo",
+          "id": 7
+        }
+      }
+    },
+    "DseUpdateEquipmentInfo": {
+      "fields": {
+        "infos": {
+          "rule": "repeated",
+          "type": "EquipmentInfo",
+          "id": 1
+        }
+      }
+    },
+    "DseUpdateSpiritInfo": {
+      "fields": {
+        "soldiers": {
+          "rule": "repeated",
+          "type": "DseSingleSpiritInfo",
+          "id": 1
+        }
+      }
+    },
+    "DseUpdateStage": {
+      "fields": {
+        "type": {
+          "type": "int32",
+          "id": 1
+        },
+        "stagelist": {
+          "rule": "repeated",
+          "type": "StageData",
+          "id": 2
+        }
+      }
+    },
+    "DseUseItem": {
+      "fields": {
+        "tid": {
+          "type": "int32",
+          "id": 1
+        },
+        "amount": {
+          "type": "int32",
+          "id": 2
+        },
+        "code": {
+          "type": "int32",
+          "id": 3
+        },
+        "list": {
+          "type": "MDropList",
+          "id": 4
+        },
+        "msgType": {
+          "type": "int32",
+          "id": 5
+        }
+      }
+    },
+    "PlayerBaseInfo": {
+      "fields": {
+        "name": {
+          "type": "string",
+          "id": 1
+        },
+        "level": {
+          "type": "int32",
+          "id": 2
+        },
+        "exp": {
+          "type": "int32",
+          "id": 3
+        },
+        "vipLevel": {
+          "type": "int32",
+          "id": 4
+        },
+        "totalbuy": {
+          "type": "int32",
+          "id": 5
+        },
+        "head": {
+          "type": "int32",
+          "id": 6
+        },
+        "power": {
+          "type": "int32",
+          "id": 7
+        },
+        "sweeptimes": {
+          "type": "int32",
+          "id": 8
+        },
+        "screenspirits": {
+          "type": "int32",
+          "id": 9
+        }
+      }
+    },
+    "PlayerCurrency": {
+      "fields": {
+        "rechargecash": {
+          "type": "int32",
+          "id": 1
+        },
+        "cash": {
+          "type": "int32",
+          "id": 2
+        },
+        "vitality": {
+          "type": "int32",
+          "id": 3
+        },
+        "gold": {
+          "type": "string",
+          "id": 4
+        },
+        "friendship": {
+          "type": "int32",
+          "id": 5
+        },
+        "decree": {
+          "type": "int32",
+          "id": 6
+        },
+        "refine_point": {
+          "type": "int32",
+          "id": 7
+        }
+      }
+    },
+    "MainAnnoncement": {
+      "fields": {}
+    },
+    "DseUserInfo": {
+      "fields": {
+        "info": {
+          "type": "PlayerBaseInfo",
+          "id": 1
+        },
+        "currency": {
+          "type": "PlayerCurrency",
+          "id": 2
+        },
+        "announce": {
+          "type": "MainAnnoncement",
+          "id": 3
+        }
+      }
+    },
+    "MsgHead": {
+      "values": {
+        "DceBattleStart": 2048,
+        "DceCombineProto": 2049,
+        "DceHeartbeat": 2050,
+        "DceResetLeader": 2051,
+        "DceShowSpiritInfo": 2052,
+        "DceShowFormationInfo": 2053,
+        "DceSwitchFormation": 2054,
+        "DceShowSingleSpiritInfo": 2055,
+        "DceBattleOpt": 2056,
+        "DceUserInfo": 2057,
+        "DceStageInfo": 2058,
+        "DceStageAward": 2059,
+        "DceStageExplore": 2060,
+        "DceStorageList": 2061,
+        "DceUseItem": 2062,
+        "DceBattleSweep": 2063,
+        "DceShopOpt": 2064,
+        "DceDecreeShopOpt": 2065,
+        "DceStageReset": 2066,
+        "DceSummon": 2067,
+        "DceSummonInterface": 2068,
+        "DceSpiritDevelop": 2069,
+        "DceCombineSpiritDebris": 2070,
+        "DceSpiritDebrisList": 2071,
+        "DceCombineEquipmentDebris": 2072,
+        "DceEquipmentDebrisList": 2073,
+        "DceAllEquipmentInfo": 2074,
+        "DceEquipmentGearUp": 2075,
+        "DceEquipmentEnhance": 2076,
+        "DceEquipmentRefine": 2077,
+        "DceTownPatrolOpt": 2078,
+        "DceDevilTowerOpt": 2079,
+        "DceMailOpt": 2080,
+        "DceChangeSpiritSkin": 2081,
+        "DceInstituteOpt": 2082,
+        "DceDugeonOpt": 2083,
+        "DseAuthState": 512,
+        "DseBattleStart": 513,
+        "DseCombineProto": 514,
+        "DseHeartbeat": 515,
+        "DseResetLeaderResult": 516,
+        "DseSingleSpiritInfo": 517,
+        "DseFormationInfo": 518,
+        "DseAllSpiritInfo": 519,
+        "DseBattleOpt": 520,
+        "DseUserInfo": 521,
+        "DseStageInfo": 522,
+        "DseStageAward": 523,
+        "DseStageExplore": 524,
+        "DseItemChange": 525,
+        "DseStorageList": 526,
+        "DseUseItem": 527,
+        "DseUpdateStage": 528,
+        "DseBattleSweep": 529,
+        "DseMainScreenReady": 530,
+        "DseShopOpt": 531,
+        "DseDecreeShopOpt": 532,
+        "DseStageReset": 533,
+        "DseUpdateSpiritInfo": 534,
+        "DseSummon": 535,
+        "DseSummonInterface": 536,
+        "DseSpiritDevelop": 537,
+        "DseSwitchFormation": 538,
+        "DseCombineSpiritDebris": 539,
+        "DseSpiritDebrisList": 540,
+        "DseCombineEquipmentDebris": 541,
+        "DseEquipmentDebrisList": 542,
+        "DseAllEquipmentInfo": 543,
+        "DseUpdateEquipmentInfo": 544,
+        "DseEquipmentGearUp": 545,
+        "DseEquipmentEnhance": 546,
+        "DseEquipmentRefine": 547,
+        "DseTownPatrolOpt": 548,
+        "DseDevilTowerOpt": 549,
+        "DseMailOpt": 550,
+        "DseChangeSpiritSkin": 551,
+        "DseReformInfo": 552,
+        "DseInstituteOpt": 553,
+        "DseDugeonOpt": 554
+      }
+    }
+  }
+}

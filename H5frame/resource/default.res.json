@@ -1,0 +1,51 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,common_json,common_proto,config_cfg,language_json,others_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "cfg/common.json",
+			"type": "json",
+			"name": "common_json"
+		},
+		{
+			"url": "cfg/common.proto",
+			"type": "bin",
+			"name": "common_proto"
+		},
+		{
+			"url": "cfg/config.cfg",
+			"type": "bin",
+			"name": "config_cfg"
+		},
+		{
+			"url": "language.json",
+			"type": "json",
+			"name": "language_json"
+		},
+		{
+			"url": "others.json",
+			"type": "json",
+			"name": "others_json"
+		},
+		{
+			"url": "eui_assets/eui_assets_sheet.json",
+			"type": "sheet",
+			"name": "eui_assets_sheet_json",
+			"subkeys": "border_png,btn_fanye_dajiantou_1_png,btn_fanye_dajiantou_2_png,btn_fanye_dajiantou_3_png,btn_fanye_shuzi_1_png,btn_fanye_shuzi_2_png,btn_fanye_shuzi_3_png,btn_fanye_xiaojiantou_1_png,btn_fanye_xiaojiantou_2_png,btn_fanye_xiaojiantou_3_png,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,handle_png,header_png,off_png,on_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,selected_png,thumb_pb_png,thumb_png,track_pb_png,track_png,track_sb_png,tracklight_png"
+		}
+	]
+}

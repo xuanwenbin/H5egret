@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "node",
+        "request": "launch",
+        "name": "txt2json Program",
+        "program": "${workspaceRoot}/out/main.js",
+        "stopOnEntry": false,
+        "args": ["txt/configlist.xlsx", "txt"],
+        "outFiles": ["${workspaceRoot}/out/*.js"]
+    }]
+}

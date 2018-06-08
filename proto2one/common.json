@@ -1,0 +1,3298 @@
+{
+    "package": null,
+    "syntax": "proto2",
+    "messages": [
+        {
+            "name": "BattleAction",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "attackid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "attackrole",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skillid",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skillparam",
+                    "id": 4
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleEnemyUnit",
+                    "name": "targetlist",
+                    "id": 5
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleSelfUnit",
+                    "name": "owneffectlist",
+                    "id": 6
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleOneUnit",
+                    "name": "allspiritslist",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "currenttime",
+                    "id": 8
+                }
+            ]
+        },
+        {
+            "name": "BattleEnemyUnit",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "role",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "cri",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "hit",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "damage",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shield",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "enemyeffecttype",
+                    "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "enemyeffectvalue",
+                    "id": 12
+                }
+            ]
+        },
+        {
+            "name": "BattleInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "battleid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "battletype",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "TacticInfo",
+                    "name": "attackTac",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "TacticInfo",
+                    "name": "defendTac",
+                    "id": 4
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleAction",
+                    "name": "actionlist",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "score",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isauto",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "BattleOneUnit",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "role",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "hp",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "maxhp",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "furypoint",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "slideacctime",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "vertigotime",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shieldtime",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shieldvalue",
+                    "id": 9
+                }
+            ]
+        },
+        {
+            "name": "BattleSelfUnit",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "owneffecttype",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "owneffectparam",
+                    "id": 11
+                }
+            ]
+        },
+        {
+            "name": "BattleSettle",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "star",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "gold",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "exp",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "firstpass",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "droplist",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "BattleSpirits",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1,
+                    "options": {
+                        "default": "0"
+                    }
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "spiritsid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skillid",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "slideskillid",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "furyskillid",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "leaderskillid",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "talentid",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "upgrade",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "reformed",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skin",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "hp",
+                    "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "maxhp",
+                    "id": 12
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "speed",
+                    "id": 13
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "furypoint",
+                    "id": 14
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "propertylist",
+                    "id": 15
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "basepropertylist",
+                    "id": 16
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "buffpropertylist",
+                    "id": 17
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "slideacctime",
+                    "id": 18
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "vertigotime",
+                    "id": 19
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shieldtime",
+                    "id": 20
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shieldvalue",
+                    "id": 21
+                }
+            ]
+        },
+        {
+            "name": "DceAllEquipmentInfo",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DceBattleOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "battleid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "opt_type",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "param",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "transparam",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "DceBattleStart",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "targetID",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceBattleSweep",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "targetID",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "times",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DceChangeSpiritSkin",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skin_id",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceCombineEquipmentDebris",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceCombineProto",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "string",
+                    "name": "proto_list",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceCombineSpiritDebris",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceDecreeShopOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "index",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceDevilTowerOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceEquipmentDebrisList",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DceEquipmentEnhance",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceEquipmentGearUp",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceEquipmentRefine",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceHeartbeat",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DceInstituteOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "instituteid",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceMailOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "mailtype",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "receiver",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "receiveruid",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "content",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "DceResetLeader",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceShopOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shopid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "count",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DceShowFormationInfo",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DceShowSingleSpiritInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceShowSpiritInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "msgType",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceSpiritDebrisList",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DceSpiritDevelop",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "action",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceStageAward",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "chapterid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "sceneid",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DceStageExplore",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceStageInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "chapterid",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceStageReset",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "stageid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceStorageList",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "StorageType",
+                    "name": "type",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DceSummon",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "mode",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DceSummonInterface",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DceSwitchFormation",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos1",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos2",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DceTownPatrolOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "param",
+                    "id": 2
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "hoepos",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DceUseExpItem",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "amount",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DceUseItem",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "amount",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "param",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "msgType",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DceUserInfo",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DseAllEquipmentInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "EquipmentInfo",
+                    "name": "infos",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseAllSpiritInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "DseSingleSpiritInfo",
+                    "name": "soldiers",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseAuthState",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "bool",
+                    "name": "pass",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "int32",
+                    "name": "leftMin",
+                    "id": 3
+                },
+                {
+                    "rule": "required",
+                    "type": "int32",
+                    "name": "time",
+                    "id": 4
+                },
+                {
+                    "rule": "required",
+                    "type": "int32",
+                    "name": "zone",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "uid",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "DseBattleOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "opt_type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "param",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 4
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleAction",
+                    "name": "action",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isover",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "BattleInfo",
+                    "name": "battleinfo",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "sendclient",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "BattleSettle",
+                    "name": "BattleSettle",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "transparam",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "satifycon",
+                    "id": 11
+                }
+            ]
+        },
+        {
+            "name": "DseBattleStart",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "targetID",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "BattleInfo",
+                    "name": "battleinfo",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "result",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseBattleSweep",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "targetID",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 3
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleSettle",
+                    "name": "BattleSettle",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DseChangeSpiritSkin",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skin_id",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseCombineEquipmentDebris",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseCombineProto",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseCombineSpiritDebris",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DecreeShop",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "freetimes",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "lastrefreshtime",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "remainrefreshtimes",
+                    "id": 3
+                },
+                {
+                    "rule": "repeated",
+                    "type": "ShopUnit",
+                    "name": "shoplist",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DseDecreeShopOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "index",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "DecreeShop",
+                    "name": "decreeshop",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DevilTowerData",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "curlayer",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "maxlayer",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "losetimes",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "buychallenge",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "buyreset",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "sweepstart",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "DseDevilTowerOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "DevilTowerData",
+                    "name": "deviltower",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseEquipmentDebrisList",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "MItem",
+                    "name": "items",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseEquipmentEnhance",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseEquipmentGearUp",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseEquipmentRefine",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "SingleSoldier",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 2
+                },
+                {
+                    "rule": "repeated",
+                    "type": "EquipmentInfoLite",
+                    "name": "equips",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseFormationInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "SingleSoldier",
+                    "name": "forms",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "captain_pos",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseHeartbeat",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "time",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "InstituteItem",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "level",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "InstituteList",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "InstituteItem",
+                    "name": "institutelist",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "InstituteData",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "InstituteList",
+                    "name": "allinstitute",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "instituteid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "finishtime",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "freesec",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DseInstituteOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "instituteid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "InstituteData",
+                    "name": "institute",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DseItemChange",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "list",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "ItemSourceType",
+                    "name": "source",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "ParamUnit",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "param",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "MailData",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "createtime",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "title",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "content",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "name",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "uid",
+                    "id": 6
+                },
+                {
+                    "rule": "repeated",
+                    "type": "ParamUnit",
+                    "name": "paramlist",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "reward",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isget",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isread",
+                    "id": 10
+                }
+            ]
+        },
+        {
+            "name": "DseMailOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "mailtype",
+                    "id": 3
+                },
+                {
+                    "rule": "repeated",
+                    "type": "MailData",
+                    "name": "maillist",
+                    "id": 4
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "newcounts",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "DseMainScreenReady",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DseReformInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "spiritid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "endtime",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "interval",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "costnum",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DseResetLeaderResult",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "result",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseShopOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shopid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "count",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 4
+                },
+                {
+                    "rule": "repeated",
+                    "type": "ShopUnit",
+                    "name": "buylist",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "DseSingleSpiritInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "maxhp",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "attack",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "defence",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "speed",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isCaptain",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "level",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "reformed",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "breakthrough",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "upgraded",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "awakened",
+                    "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "talent",
+                    "id": 12
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "power",
+                    "id": 13
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "exp",
+                    "id": 14
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "skin",
+                    "id": 15
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "skin_unlocked",
+                    "id": 16
+                }
+            ]
+        },
+        {
+            "name": "DseSpiritDebrisList",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "MItem",
+                    "name": "items",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseSpiritDevelop",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "action",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseSpiritInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "SpiritInfoLite",
+                    "name": "spirits",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "DseSingleSpiritInfo",
+                    "name": "info",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseStageAward",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "chapterid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "sceneid",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "ExploreData",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "starttime",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "maxendtime",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "totalgold",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "totalexp",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "interval",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "goldonce",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "exponce",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "havedrop",
+                    "id": 9
+                }
+            ]
+        },
+        {
+            "name": "DseStageExplore",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "ExploreData",
+                    "name": "info",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "gold",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "exp",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "droplist",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "ChapterInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "chapterid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "nextstageid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isaward",
+                    "id": 3
+                },
+                {
+                    "rule": "repeated",
+                    "type": "ChildInfo",
+                    "name": "scenelist",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "lastjuniorstageid",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "ChildInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "sceneid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "scenestar",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isaward",
+                    "id": 3
+                },
+                {
+                    "rule": "repeated",
+                    "type": "StageData",
+                    "name": "stagelist",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "DseStageInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "ChapterInfo",
+                    "name": "chapterinfo",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseStageReset",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseStorageList",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "StorageType",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "MItem",
+                    "name": "items",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseSummon",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "mode",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "list",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "SummonPool",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "free_used",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "next_free",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DseSummonInterface",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "SummonPool",
+                    "name": "pools",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseSwitchFormation",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "TownPatrolInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "patrolspells",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "lastrecovertime",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isbuy",
+                    "id": 4
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "slatelist",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "canguess",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "canhoeing",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "finishtimes",
+                    "id": 8
+                },
+                {
+                    "rule": "repeated",
+                    "type": "int32",
+                    "name": "finishreward",
+                    "id": 9
+                }
+            ]
+        },
+        {
+            "name": "TownPatrolOneMove",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "slatenum",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "eventtype",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "droplist",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "farmland",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "getgold",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "DseTownPatrolOpt",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "res",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "param",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "guessres",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "optiondroplist",
+                    "id": 5
+                },
+                {
+                    "rule": "repeated",
+                    "type": "TownPatrolOneMove",
+                    "name": "movelist",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "TownPatrolInfo",
+                    "name": "patrolinfo",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "DseUpdateEquipmentInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "EquipmentInfo",
+                    "name": "infos",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseUpdateSpiritInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "DseSingleSpiritInfo",
+                    "name": "soldiers",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseUpdateStage",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "StageData",
+                    "name": "stagelist",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "DseUseExpItemResult",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "result",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DseUseItem",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "amount",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "code",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "MDropList",
+                    "name": "list",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "msgType",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "PlayerBaseInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "name",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "level",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "exp",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "vipLevel",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "totalbuy",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "head",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "power",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "sweeptimes",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "screenspirits",
+                    "id": 9
+                }
+            ]
+        },
+        {
+            "name": "PlayerCurrency",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "rechargecash",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "cash",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "vitality",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "gold",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "friendship",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "decree",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "refine_point",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "MainAnnoncement",
+            "syntax": "proto2",
+            "fields": []
+        },
+        {
+            "name": "DseUserInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "PlayerBaseInfo",
+                    "name": "info",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "PlayerCurrency",
+                    "name": "currency",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "MainAnnoncement",
+                    "name": "announce",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "EquipmentInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "enhanceLevel",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "refineLevle",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "prop_value",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "EquipmentInfoLite",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "oid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "EquipPos",
+                    "name": "pos",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "MDropData",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "type",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "index",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "amount",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "MDropList",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "MDropData",
+                    "name": "drops",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "MItem",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "amount",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "ShopUnit",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "shopid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "count",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "SkillInfoLite",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "level",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "SpiritInfoLite",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "pos",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "tid",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "isCaptain",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "StageData",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "stageid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "star",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "todaytimes",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "todaybuy",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "TacticInfo",
+            "syntax": "proto2",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "uid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "leaderid",
+                    "id": 2,
+                    "options": {
+                        "default": "0"
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "BattleSpirits",
+                    "name": "spiritslist",
+                    "id": 3
+                }
+            ]
+        }
+    ],
+    "enums": [
+        {
+            "name": "StorageType",
+            "syntax": "proto2",
+            "values": [
+                {
+                    "name": "INVALID_BAG",
+                    "id": 0
+                },
+                {
+                    "name": "ITEM_BAG",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ItemSourceType",
+            "syntax": "proto2",
+            "values": [
+                {
+                    "name": "ITEM_SOURCE_NORMAL",
+                    "id": 0
+                },
+                {
+                    "name": "ITEM_SOURCE_TREASURE_CASE",
+                    "id": 1
+                },
+                {
+                    "name": "ITEM_SOURCE_GIFT",
+                    "id": 2
+                },
+                {
+                    "name": "ITEM_SOURCE_MULTI_DROP_CASE",
+                    "id": 3
+                },
+                {
+                    "name": "ITEM_SOURCE_PICK_GIFT",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "EquipPos",
+            "syntax": "proto2",
+            "values": [
+                {
+                    "name": "WEAPON",
+                    "id": 1
+                },
+                {
+                    "name": "HEAD",
+                    "id": 2
+                },
+                {
+                    "name": "CHEST",
+                    "id": 3
+                },
+                {
+                    "name": "BOOT",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "MsgHead",
+            "syntax": "proto2",
+            "values": [
+                {
+                    "name": "DceBattleStart",
+                    "id": 2048
+                },
+                {
+                    "name": "DceCombineProto",
+                    "id": 2049
+                },
+                {
+                    "name": "DceHeartbeat",
+                    "id": 2050
+                },
+                {
+                    "name": "DceResetLeader",
+                    "id": 2051
+                },
+                {
+                    "name": "DceShowSpiritInfo",
+                    "id": 2052
+                },
+                {
+                    "name": "DceShowFormationInfo",
+                    "id": 2053
+                },
+                {
+                    "name": "DceSwitchFormation",
+                    "id": 2054
+                },
+                {
+                    "name": "DceShowSingleSpiritInfo",
+                    "id": 2055
+                },
+                {
+                    "name": "DceBattleOpt",
+                    "id": 2056
+                },
+                {
+                    "name": "DceUserInfo",
+                    "id": 2057
+                },
+                {
+                    "name": "DceStageInfo",
+                    "id": 2058
+                },
+                {
+                    "name": "DceStageAward",
+                    "id": 2059
+                },
+                {
+                    "name": "DceStageExplore",
+                    "id": 2060
+                },
+                {
+                    "name": "DceStorageList",
+                    "id": 2061
+                },
+                {
+                    "name": "DceUseItem",
+                    "id": 2062
+                },
+                {
+                    "name": "DceBattleSweep",
+                    "id": 2063
+                },
+                {
+                    "name": "DceShopOpt",
+                    "id": 2064
+                },
+                {
+                    "name": "DceDecreeShopOpt",
+                    "id": 2065
+                },
+                {
+                    "name": "DceStageReset",
+                    "id": 2066
+                },
+                {
+                    "name": "DceSummon",
+                    "id": 2067
+                },
+                {
+                    "name": "DceSummonInterface",
+                    "id": 2068
+                },
+                {
+                    "name": "DceSpiritDevelop",
+                    "id": 2069
+                },
+                {
+                    "name": "DceCombineSpiritDebris",
+                    "id": 2070
+                },
+                {
+                    "name": "DceSpiritDebrisList",
+                    "id": 2071
+                },
+                {
+                    "name": "DceCombineEquipmentDebris",
+                    "id": 2072
+                },
+                {
+                    "name": "DceEquipmentDebrisList",
+                    "id": 2073
+                },
+                {
+                    "name": "DceAllEquipmentInfo",
+                    "id": 2074
+                },
+                {
+                    "name": "DceEquipmentGearUp",
+                    "id": 2075
+                },
+                {
+                    "name": "DceEquipmentEnhance",
+                    "id": 2076
+                },
+                {
+                    "name": "DceEquipmentRefine",
+                    "id": 2077
+                },
+                {
+                    "name": "DceTownPatrolOpt",
+                    "id": 2078
+                },
+                {
+                    "name": "DceDevilTowerOpt",
+                    "id": 2079
+                },
+                {
+                    "name": "DceMailOpt",
+                    "id": 2080
+                },
+                {
+                    "name": "DceChangeSpiritSkin",
+                    "id": 2081
+                },
+                {
+                    "name": "DceInstituteOpt",
+                    "id": 2082
+                },
+                {
+                    "name": "DseAuthState",
+                    "id": 512
+                },
+                {
+                    "name": "DseBattleStart",
+                    "id": 513
+                },
+                {
+                    "name": "DseCombineProto",
+                    "id": 514
+                },
+                {
+                    "name": "DseHeartbeat",
+                    "id": 515
+                },
+                {
+                    "name": "DseResetLeaderResult",
+                    "id": 516
+                },
+                {
+                    "name": "DseSingleSpiritInfo",
+                    "id": 517
+                },
+                {
+                    "name": "DseFormationInfo",
+                    "id": 518
+                },
+                {
+                    "name": "DseAllSpiritInfo",
+                    "id": 519
+                },
+                {
+                    "name": "DseBattleOpt",
+                    "id": 520
+                },
+                {
+                    "name": "DseUserInfo",
+                    "id": 521
+                },
+                {
+                    "name": "DseStageInfo",
+                    "id": 522
+                },
+                {
+                    "name": "DseStageAward",
+                    "id": 523
+                },
+                {
+                    "name": "DseStageExplore",
+                    "id": 524
+                },
+                {
+                    "name": "DseItemChange",
+                    "id": 525
+                },
+                {
+                    "name": "DseStorageList",
+                    "id": 526
+                },
+                {
+                    "name": "DseUseItem",
+                    "id": 527
+                },
+                {
+                    "name": "DseUpdateStage",
+                    "id": 528
+                },
+                {
+                    "name": "DseBattleSweep",
+                    "id": 529
+                },
+                {
+                    "name": "DseMainScreenReady",
+                    "id": 530
+                },
+                {
+                    "name": "DseShopOpt",
+                    "id": 531
+                },
+                {
+                    "name": "DseDecreeShopOpt",
+                    "id": 532
+                },
+                {
+                    "name": "DseStageReset",
+                    "id": 533
+                },
+                {
+                    "name": "DseUpdateSpiritInfo",
+                    "id": 534
+                },
+                {
+                    "name": "DseSummon",
+                    "id": 535
+                },
+                {
+                    "name": "DseSummonInterface",
+                    "id": 536
+                },
+                {
+                    "name": "DseSpiritDevelop",
+                    "id": 537
+                },
+                {
+                    "name": "DseSwitchFormation",
+                    "id": 538
+                },
+                {
+                    "name": "DseCombineSpiritDebris",
+                    "id": 539
+                },
+                {
+                    "name": "DseSpiritDebrisList",
+                    "id": 540
+                },
+                {
+                    "name": "DseCombineEquipmentDebris",
+                    "id": 541
+                },
+                {
+                    "name": "DseEquipmentDebrisList",
+                    "id": 542
+                },
+                {
+                    "name": "DseAllEquipmentInfo",
+                    "id": 543
+                },
+                {
+                    "name": "DseUpdateEquipmentInfo",
+                    "id": 544
+                },
+                {
+                    "name": "DseEquipmentGearUp",
+                    "id": 545
+                },
+                {
+                    "name": "DseEquipmentEnhance",
+                    "id": 546
+                },
+                {
+                    "name": "DseEquipmentRefine",
+                    "id": 547
+                },
+                {
+                    "name": "DseTownPatrolOpt",
+                    "id": 548
+                },
+                {
+                    "name": "DseDevilTowerOpt",
+                    "id": 549
+                },
+                {
+                    "name": "DseMailOpt",
+                    "id": 550
+                },
+                {
+                    "name": "DseChangeSpiritSkin",
+                    "id": 551
+                },
+                {
+                    "name": "DseReformInfo",
+                    "id": 552
+                },
+                {
+                    "name": "DseInstituteOpt",
+                    "id": 553
+                }
+            ]
+        }
+    ],
+    "isNamespace": true
+}

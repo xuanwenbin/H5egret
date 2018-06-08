@@ -1,0 +1,811 @@
+
+
+message BattleAction
+{
+	optional string		  		attackid   		= 1;//本次攻击式神ID
+	optional int32		  		attackrole		= 2;//1:攻击方 2:防守方
+	optional int32		  		skillid       	= 3;//本次攻击技能ID
+	optional int32				skillparam		= 4;//技能参数
+	repeated BattleEnemyUnit 	targetlist    	= 5;//攻击目标
+	repeated BattleSelfUnit		owneffectlist	= 6;//对己方生效目标
+	repeated BattleOneUnit  	allspiritslist	= 7;//双方式神数据同步
+	optional string		  		currenttime		= 8;//当前时间戳 ms
+}
+
+message BattleEnemyUnit
+{
+	optional string 	  id        		= 1;//式神ID
+	optional int32		  role				= 2;//1攻击方 2防守方
+	optional bool 	  	  cri           	= 7;//是否暴击
+	optional bool 	  	  hit           	= 8;//是否命中
+	optional int32 	  	  damage        	= 9;//伤害值
+	optional int32		  shield			= 10;//护盾减免伤害数量
+	optional int32		  enemyeffecttype	= 11;//对敌效果类型
+	optional int32		  enemyeffectvalue	= 12;//对敌效果数值
+}
+
+
+message BattleInfo
+{
+	optional string			battleid	= 1;//战斗ID
+	optional int32			battletype	= 2;//战斗类型 1测试战斗
+	optional TacticInfo		attackTac	= 3;//攻击阵容
+	optional TacticInfo		defendTac	= 4;//防守阵容
+	repeated BattleAction 	actionlist 	= 5;//本次战斗所有攻击
+	optional int32			score		= 6;//攻击方 0输 1险胜 2胜利 3大胜
+	optional bool			isauto		= 7;//进入战斗时玩家是否自动攻击
+}
+
+
+message BattleOneUnit
+{
+	optional string 	id        		= 1;//式神ID
+	optional int32		role			= 2;//1攻击方 2防守方
+	optional int32 	  	hp            	= 3;//剩余血量
+	optional int32 	  	maxhp        	= 4;//总血量
+	optional int32		furypoint		= 5;//当前怒气
+	optional int32		slideacctime 	= 6;//滑动技能累加时间
+	optional int32		vertigotime		= 7;//剩余眩晕时间
+	optional int32		shieldtime		= 8;//剩余护盾时间
+	optional int32		shieldvalue		= 9;//护盾值
+}
+
+message BattleSelfUnit
+{
+	optional string 	  id        		= 1;//式神ID
+	optional int32		  owneffecttype		= 10;//对己方效果类型
+	optional int32		  owneffectparam 	= 11;//对己效果参数	
+}message BattleSettle
+{
+	optional int32 star = 1;
+	optional int32 gold = 2;
+	optional int32 exp = 3;
+	optional bool  firstpass = 4;
+	optional MDropList droplist = 5;
+}
+message BattleSpirits
+{
+	optional string 	id               = 1[default="0"];	//id
+	optional int32      spiritsid        = 2;	//数据表id
+	optional int32      skillid		     = 3;	//普通攻击技能id
+	optional int32      slideskillid	 = 4;	//滑动攻击技能id
+	optional int32      furyskillid   	 = 5;	//怒气技能id
+	optional int32		leaderskillid	 = 6;	//leader技能ID
+	optional int32		talentid		 = 7;	//天赋ID
+	optional int32		upgrade			 = 8;	//进阶次数
+	optional int32		reformed		 = 9;	//转生次数
+	optional int32		skin			 = 10;	//皮肤形象
+	optional int32		hp 				 = 11;	//当前血量
+	optional int32      maxhp            = 12;	//血量上限	
+	optional int32		speed			 = 13;	//速度
+	optional int32		furypoint		 = 14;	//怒气值
+	repeated int32		propertylist	 = 15;	//各种基础属性
+	repeated int32		basepropertylist = 16;  //各种基础属性的基础值
+	repeated int32		buffpropertylist = 17;	//Bufff 加成列表
+	optional int32		slideacctime	 = 18;	//滑动技能累加时间
+	optional int32		vertigotime		 = 19;	//剩余眩晕时间
+	optional int32		shieldtime		 = 20;	//剩余护盾时间
+	optional int32		shieldvalue		 = 21;	//护盾值
+}
+
+message DceAllEquipmentInfo 
+{
+}
+message DceBattleOpt
+{
+	optional string	battleid	= 1;//操作的战斗ID
+	optional int32	opt_type 	= 2;//1准备好 2播放一个action 3释放滑动技能 4释放怒气技能 5切换手动自动(param自动发1手动发0) 6跳过
+	optional string id 			= 3;//技能释放式神ID
+	optional int32	param		= 4;//怒气技能的打p效果 1 2 3 4 
+	optional int32	transparam	= 5;//无逻辑 转发客户端参数
+}
+message DceBattleStart
+{
+	optional string		targetID 	= 1;
+	optional int32		type     	= 2;//0测试
+}
+
+message DceBattleSweep
+{
+	optional string		targetID 	= 1;
+	optional int32		type     	= 2;//0测试1普通副本2精英副本
+	optional int32		times		= 3;//扫荡次数
+}
+message DceChangeSpiritSkin
+{
+	optional int32	tid 		= 1;//式神ID
+	optional int32	skin_id		= 2;//皮肤ID
+}message DceCombineEquipmentDebris
+{
+	repeated int32	id = 1;		//装备（碎片）配表ID
+}
+message DceCombineProto
+{
+	repeated string			proto_list		= 1; // 协议列表
+}message DceCombineSpiritDebris
+{
+	repeated int32	id = 1;		//式神（碎片）ID
+	optional int32  type = 2;	//1 = 普通合成，2 = 一键合成
+}message DceDecreeShopOpt
+{
+	optional int32	type = 1;//1数据 2刷新 3购买
+	optional int32	index = 2;//商品位置 1-6
+}message DceDevilTowerOpt
+{
+	optional int32	type = 1;//1重置 2购买 3扫荡 4取消扫荡 5立即结束
+}message DceEquipmentDebrisList
+{
+}message DceEquipmentEnhance 
+{
+	optional string		oid = 1;	//装备唯一ID
+}message DceEquipmentGearUp 
+{
+	optional string		oid = 1;	//装备唯一ID
+	optional int32		pos = 2;	//装备到阵型位置（1-7）
+}message DceEquipmentRefine
+{
+	optional string		oid = 1;	//装备唯一ID
+}
+message DceHeartbeat 
+{
+}message DceInstituteOpt
+{
+	optional int32	type 		= 1;	//1请求数据 2升级(包含解锁)
+	optional int32	instituteid = 2;	//研究IDd
+}message DceMailOpt
+{
+	optional int32	type 		= 1;//1请求邮件 2领取 3发邮件 4告知已读
+	optional int32  mailtype 	= 2;//邮件类型
+	optional string	id			= 3;//领奖邮件ID
+	optional string receiver	= 4;//私聊邮件接收者名字
+	optional string receiveruid	= 5;//私聊邮件接收者uid
+	optional string content		= 6;//私聊内容
+}
+message DceResetLeader
+{
+	optional int32		pos = 1;//设为队长的式神位置号
+}message DceShopOpt
+{
+	optional int32	type = 1;//1数据 2购买
+	optional int32	shopid = 2;//商品id
+	optional int32	count = 3;//购买数量
+}message DceShowFormationInfo
+{
+}message DceShowSingleSpiritInfo
+{
+	optional string		id	= 1;//切换显示的式神唯一ID
+}message DceShowSpiritInfo
+{
+	optional int32	msgType = 1;
+}message DceSpiritDebrisList
+{
+}message DceSpiritDevelop
+{
+	optional int32			id 		= 1;		//式神ID
+	optional int32			action 	= 2;		//操作，1=转生开始，2=突破，3=进阶，4=觉醒 5转生花钱结束 6转生倒计时结束
+}
+message DceStageAward
+{
+	optional int32	type			= 1;//1普通2精英
+	optional int32 	chapterid	 	= 2;//章节ID
+	optional int32	sceneid			= 3;//场景ID
+}
+message DceStageExplore
+{
+	optional int32 type = 1;//1请求数据 2收获 3领取掉落
+}
+message DceStageInfo
+{
+	optional int32	type			= 1;//1普通2精英
+	optional int32 	chapterid	 	= 2;//请求的章节ID 进入副本发0(精英和普通)
+}
+message DceStageReset
+{
+	optional int32		stageid		= 1;//关卡id
+	optional int32		type     	= 2;//1普通副本
+}
+enum StorageType
+{
+	INVALID_BAG = 0;
+	ITEM_BAG = 1;//道具背包
+}
+
+message DceStorageList
+{
+	optional StorageType		type = 1;//要显示的背包类型
+}message DceSummon
+{
+	optional int32			id 		= 1;		//卡池ID
+	optional int32			mode 	= 2;		//模式，1=单抽，2=多抽（十连）
+}message DceSummonInterface
+{
+}message DceSwitchFormation
+{
+	optional int32		pos1 = 1;//交换上阵式神的位置1，必须是合法位置号
+	optional int32		pos2 = 2;//交换上阵式神的位置2，当为合法位置号时表示两上阵式神交换位置，0时表示是未上阵式神替换上阵式神（此时才读取id值）
+	optional int32		tid = 3;//上阵式神配表ID，当pos2有效时不处理此值
+}
+message DceTownPatrolOpt
+{
+	optional int32 type = 1; // 1面板数据 2前进 3猜拳 4锄地 5购买巡逻符  6领取成就奖励
+	optional int32 param = 2;//猜拳(1剪刀 2石头 3布) 成就奖励代表次数
+	repeated int32 hoepos = 3;//玩家锄地列表 编号
+}message DceUseExpItem
+{
+	optional int32		pos = 1;//使用经验道具的式神位置ID
+	optional int32		tid = 2;//使用的经验道具类型
+	optional int32		amount = 3;//使用数量
+}message DceUseItem
+{
+	optional int32			tid = 1;//要使用的道具id
+	optional int32			amount = 2;//要使用的数量
+	optional int32			param = 3;//参数，在预选择宝箱中使用，表示选择的奖励ID
+	optional int32			msgType = 4;
+}message DceUserInfo
+{
+}
+message DseAllEquipmentInfo
+{
+	repeated EquipmentInfo		infos = 1;
+}
+message DseAllSpiritInfo
+{
+	repeated DseSingleSpiritInfo		soldiers = 1;
+}//返回认证通过状态
+
+message DseAuthState 
+{
+    required bool   pass  	= 1; //是否认证通过
+    required int32  type 	= 2; //未通过原因(1.checkSecret; 2.封停)
+    required int32  leftMin = 3; //封停剩余时间
+    required int32  time 	= 4; //当前时间
+    required int32  zone 	= 5; //当前时区
+    optional string uid		= 6; //uid
+}
+message DseBattleOpt
+{
+	optional int32			opt_type 		= 1;//1准备好 2播放action结束 3释放滑动技能 4释放怒气技能
+	optional string 		id 				= 2;//技能释放式神ID
+	optional int32			param			= 3;//其他参数 比如怒气技能的打P效果 1 2 3 4 
+	optional int32			res				= 4;//操作返回码 0代表成功直接展示action 非0代表非法请求
+	repeated BattleAction 	action 			= 5;//攻击数据
+	optional bool			isover 			= 6;//是否战斗结束 isover为false时 battleinfo==null
+	optional BattleInfo		battleinfo 		= 7;//整个战斗过程和初始阵容信息
+	optional bool			sendclient		= 8;//是否发送回客户端
+	optional BattleSettle   BattleSettle    = 9;//战斗结算信息
+	optional int32			transparam		= 10;//无逻辑 转发客户端参数
+	optional bool			satifycon		= 11;//封魔塔挑战是否满足条件
+}
+
+
+
+message DseBattleStart
+{
+	optional string		targetID 	= 1;
+	optional BattleInfo	battleinfo	= 2;//战斗数据
+	optional int32		result		= 3;
+}
+message DseBattleSweep
+{
+	optional int32		res			= 1;//结果
+	optional string		targetID 	= 2;
+	optional int32		type     	= 3;//0测试1普通副本2精英副本
+	repeated BattleSettle   BattleSettle    = 4;//结算信息
+}message DseChangeSpiritSkin
+{
+	optional int32	tid 		= 1;//式神ID
+	optional int32	skin_id		= 2;//皮肤ID
+	optional int32	code		= 3;//错误码
+}message DseCombineEquipmentDebris
+{
+	repeated int32		id = 1;	//合成的装备（碎片）配表ID
+	optional int32		code = 2;//错误码
+}
+message DseCombineProto
+{
+	optional int32			res				= 2; // 0:成功 1:失败
+}message DseCombineSpiritDebris
+{
+	repeated int32		id = 1;	//合成的式神（碎片）ID
+	optional int32		code = 2;//错误码
+	optional int32  	type = 3;	//1 = 普通合成，2 = 一键合成
+}
+message DecreeShop
+{
+	optional int32		freetimes = 1;//剩余免费次数
+	optional string		lastrefreshtime = 2;//免费次数刷新时间
+	optional int32		remainrefreshtimes = 3;//今日剩余可刷新次数
+	repeated ShopUnit	shoplist = 4;//已购买商品列表
+}
+message DseDecreeShopOpt
+{
+	optional int32	type = 1;//1数据 2购买
+	optional int32	index = 2;//商品位置 1-6
+	optional int32 	res = 3;//结果
+	optional DecreeShop decreeshop = 4;//御札商城数据
+}message DevilTowerData
+{
+	optional int32	curlayer = 1;//当前通关层数
+	optional int32	maxlayer = 2;//通关最高层数
+	optional int32  losetimes = 3;//失败次数
+	optional int32  buychallenge = 4;//购买挑战次数
+	optional int32  buyreset	= 5; //购买重置次数
+	optional string sweepstart	= 6; //扫荡开始时间
+}
+
+message DseDevilTowerOpt
+{
+	optional int32	type = 1;//1数据 2重置 3购买挑战 4扫荡 5取消扫荡 6立即结束
+	optional int32	res  = 2;
+	optional DevilTowerData deviltower = 3;//封魔塔数据
+}
+message DseEquipmentDebrisList
+{
+	repeated MItem				items = 1;	//碎片列表
+}message DseEquipmentEnhance 
+{
+	optional string		oid = 1;	//装备唯一ID
+	optional int32		code = 2;	//错误码
+}message DseEquipmentGearUp 
+{
+	optional string		oid = 1;	//装备唯一ID
+	optional int32		pos = 2;	//装备到阵型位置（1-7）
+	optional int32		code = 3;	//错误码
+}message DseEquipmentRefine
+{
+	optional string		oid = 1;	//装备唯一ID
+	optional int32		code = 2;	//错误码
+}
+message SingleSoldier
+{
+	optional int32					pos = 1;//式神位置
+	optional int32					tid	= 2;//式神配置ID
+	repeated EquipmentInfoLite		equips = 3;//装备简略信息
+}
+
+message DseFormationInfo
+{
+	repeated SingleSoldier 	forms = 1;//式神表
+	optional int32			captain_pos = 2;//队长位置
+}
+message DseHeartbeat 
+{
+	optional int32  		time    = 1;
+}message InstituteItem
+{
+	optional int32	id	= 1;	//研究ID
+	optional int32	level = 2;	//等级初始0级 解锁后1级
+}
+
+message InstituteList
+{
+	
+	repeated InstituteItem institutelist = 1;//某种类型的所有研究ID数据
+}
+message InstituteData
+{
+	repeated InstituteList allinstitute	= 1;//所有研究
+	optional int32		   instituteid	 = 2;//正在研究ID
+	optional string		   finishtime	 = 3;//结束时间
+	optional int32		   freesec		 = 4;//可免费时间(秒数)
+}
+
+message DseInstituteOpt
+{
+	optional int32	type 		= 1;	//1请求数据 2升级(包含解锁)
+	optional int32	instituteid = 2;	//研究ID
+	optional InstituteData institute = 3;//研究数据
+	optional int32	res			= 4;	//返回码
+}
+enum ItemSourceType
+{
+	ITEM_SOURCE_NORMAL = 0;
+	ITEM_SOURCE_TREASURE_CASE = 1;//宝箱掉落
+	ITEM_SOURCE_GIFT = 2;//礼包
+	ITEM_SOURCE_MULTI_DROP_CASE = 3;//多掉落宝箱
+	ITEM_SOURCE_PICK_GIFT = 4;//自选礼包
+}
+
+message DseItemChange
+{
+	optional MDropList		list = 1;//参照MDropList.proto
+	optional ItemSourceType	source = 2;//获得道具的来源，用于指示显示方式
+}message ParamUnit
+{
+	optional int32 type = 1;	//参数类型
+	optional string param = 2;	//参数
+}
+
+message MailData
+{
+	optional string id 			= 1;//唯一id
+	optional string createtime 	= 2;//创建时间
+	optional string	title		= 3;//标题
+	optional string content		= 4;//内容
+	optional string name		= 5;//发件人或者收件人
+	optional string uid			= 6;//发件人或者收件人uid
+	repeated ParamUnit paramlist = 7;//参数列表
+	optional MDropList 	reward	= 8;//奖励列表
+	optional bool		isget	= 9;//是否领取
+	optional bool		isread	= 10;//是否读取
+}
+
+message DseMailOpt
+{
+	optional int32	res			= 1;//
+	optional int32	type 		= 2;//1请求邮件 2领取 3发邮件 4邮件已读
+	optional int32  mailtype 	= 3;//邮件类型(1奖励邮件 2通知邮件 3战报 4收件箱 5发件箱)
+	repeated MailData 	maillist 	= 4;//某邮件类型的列表
+	repeated int32		newcounts	= 5;//未读邮件数量 奖励 系统 战斗 收件箱 发件箱
+}
+
+
+message DseMainScreenReady
+{
+	
+}message DseReformInfo
+{
+	optional int32	spiritid = 1;
+	optional string	endtime	= 2;
+	optional int32	interval = 3;//提前结束消耗勾玉单位时间间隔
+	optional int32  costnum = 4;//提前结束单位时间间隔消耗勾玉数
+}message DseResetLeaderResult
+{
+	optional int32		result = 1;//返回结果，0=成功，1=失败
+}
+
+message DseShopOpt
+{
+	optional int32	type = 1;//1数据 2购买
+	optional int32	shopid = 2;//商品ID
+	optional int32	count = 3;//购买数量
+	optional int32 	res = 4;//结果
+	repeated ShopUnit buylist = 5;//已购买商品列表
+}message DseSingleSpiritInfo
+{
+	optional int32		tid 		= 1;//式神配表ID
+	optional int32		maxhp		= 2;
+	optional int32		attack		= 3;
+	optional int32		defence		= 4;
+	optional int32		speed		= 5;
+	optional bool		isCaptain 	= 6;//是否是队长
+	optional int32		level		= 7;//式神等级
+	optional int32		reformed	= 8;//转生次数
+	optional int32		breakthrough= 9;//突破次数
+	optional int32		upgraded	= 10;//进阶次数
+	optional int32		awakened	= 11;//觉醒次数
+	optional int32		talent		= 12;//天赋ID
+	optional int32		power		= 13;//战斗力
+	optional int32		exp			= 14;//当前经验
+	optional int32		skin		= 15;//当前使用的皮肤
+	repeated int32		skin_unlocked = 16;//可以使用的皮肤列表
+}
+message DseSpiritDebrisList
+{
+	repeated MItem				items = 1;	//碎片列表
+}message DseSpiritDevelop
+{
+	optional int32			id 		= 1;		//式神ID
+	optional int32			action 	= 2;		//操作，1=转生开始，2=突破，3=进阶，4=觉醒 5转生花钱结束 6转生倒计时结束
+	optional int32			code	= 3;		//错误码
+}
+message DseSpiritInfo
+{
+	repeated SpiritInfoLite 		spirits	= 1;//式神简略信息
+	optional DseSingleSpiritInfo 	info 	= 2;//当前选定式神信息
+}
+message DseStageAward
+{
+	optional int32	type			= 1;//1普通2精英
+	optional int32 	chapterid	 	= 2;//章节ID
+	optional int32	sceneid			= 3;//场景ID
+	optional int32	res				= 4;//结果
+}
+message ExploreData
+{
+	optional string starttime = 1;//探索开始时间戳
+	optional string maxendtime = 2;//探索结束时间
+	optional int32	totalgold = 3;//至今获得金币
+	optional int32  totalexp  = 4;//至今获得经验
+	optional int32  interval  = 5;//每隔interval秒刷新
+	optional int32	goldonce  = 7;//每interval秒增加金币数
+	optional int32	exponce	  = 8;//每interval秒增加经验
+	optional bool	havedrop  = 9;//掉落奖励列表
+
+}
+message DseStageExplore
+{
+	optional int32 type = 1;//1请求数据 2收获 3领取掉落
+	optional int32 res	= 2;//结果
+	optional ExploreData info = 3;//面板数据
+	optional int32 gold = 4;//获得金币
+	optional int32 exp = 5;//获得经验
+	optional MDropList droplist = 6;//获得的掉落
+}
+//章节信息
+message ChapterInfo
+{
+	optional int32 		chapterid = 1;//章节ID
+	optional int32		nextstageid = 2;//通过的最后一关关卡ID
+	optional bool		isaward = 3;//章节奖励是否领取 (精英副本一章一个奖励)
+	repeated ChildInfo 	scenelist = 4;//场景列表
+	optional int32		lastjuniorstageid = 5;//普通副本通过的最后一关id
+}
+
+//场景信息
+message ChildInfo
+{
+	optional int32 sceneid 		= 1;//场景ID 章节id*100+场景ID
+	optional int32 scenestar 	= 2;//场景总星星数
+	optional bool  isaward 		= 3;//场景奖励是否领取(普通副本一个场景一个奖励)
+	repeated StageData stagelist = 4;//本场景关卡数据
+}
+
+message DseStageInfo
+{
+	optional int32	type				= 1;//1普通2精英
+	optional ChapterInfo chapterinfo 	= 2;//章节信息
+}
+
+
+message DseStageReset
+{
+	optional int32		res = 1;//结果
+}
+
+message DseStorageList
+{
+	optional StorageType		type = 1;//要显示的背包类型
+	repeated MItem				items = 2;
+}
+message DseSummon
+{
+	optional int32			id 		= 1;		//卡池ID
+	optional int32			mode 	= 2;		//模式，1=单抽，2=多抽（十连）
+	optional int32			code	= 3;		//错误代码，0为成功
+	optional MDropList		list	= 4;		//掉落列表
+}message SummonPool
+{
+	optional int32	id 			= 1;		//卡池id
+	optional int32	free_used	= 2;		//今日已免费召唤次数
+	optional string	next_free	= 3;		//下次免费召唤时间（int64时间戳）
+}
+
+message DseSummonInterface
+{
+	repeated SummonPool 	pools = 1;
+}message DseSwitchFormation
+{
+	optional int32		code = 1;//错误码
+}
+message TownPatrolInfo
+{
+	optional int32 	pos 			= 1; //现在的位置
+	optional int32 	patrolspells 	= 2; //巡逻符数量
+	optional string	lastrecovertime = 3; //上次恢复时间
+	optional bool  	isbuy 			= 4; //今日是否购买巡逻符
+	repeated int32	slatelist 		= 5; //100块石板事件 0非特殊时间 1猜拳 2招财猫 3锄地 4继续前进1步 5继续前进2步 6神秘道具包
+	optional bool	canguess 		= 6; //可猜拳
+	optional bool	canhoeing 		= 7; //可锄地
+	optional int32	finishtimes		= 8; //完成次数
+	repeated int32	finishreward 	= 9; //已经领取成就奖励的次数
+}
+message TownPatrolOneMove
+{
+	optional int32 		slatenum	= 1; //前进石板数
+	optional int32 		eventtype	= 2; //事件类型
+	optional MDropList 	droplist	= 3; //招财猫和神秘礼包 奖励列表
+	optional MDropList 	farmland	= 4; //锄地奖励列表 type -1代表炸弹
+	optional int32		getgold		= 5; //获得银币数量
+}
+
+message DseTownPatrolOpt
+{
+	optional int32 		type 		= 1; // 1面板数据 2前进 3猜拳 4锄地 5购买巡逻符  6领取成就奖励
+	optional int32 		res 		= 2; //结果
+	optional int32		param		= 3; //参数
+	optional int32 		guessres 	= 4; //-1负 0平 1胜
+	optional MDropList 			optiondroplist 	= 5; //猜拳和锄地结果奖励
+	repeated TownPatrolOneMove 	movelist 		= 6; //前进信息
+	optional TownPatrolInfo 	patrolinfo 		= 7; //面板数据
+}
+message DseUpdateEquipmentInfo
+{
+	repeated EquipmentInfo		infos = 1;
+}
+message DseUpdateSpiritInfo
+{
+	repeated DseSingleSpiritInfo		soldiers = 1;
+}message DseUpdateStage
+{
+	optional int32	   type = 1;//1普通副本更新关卡 2精英副本
+	repeated StageData stagelist = 2;
+}message DseUseExpItemResult
+{
+	optional int32		result = 1;//使用经验道具结果，0=成功，1=失败
+}message DseUseItem
+{
+	optional int32			tid = 1;
+	optional int32			amount = 2;
+	optional int32			code = 3;//结果，0=成功，1=失败
+	optional MDropList      list = 4;//道具变动表
+	optional int32			msgType = 5;
+}message PlayerBaseInfo
+{
+	optional string name			= 1;//玩家ID
+	optional int32 level			= 2;//玩家等级
+	optional int32 exp				= 3;//玩家经验
+	optional int32 vipLevel			= 4;//VIP等级
+	optional int32 totalbuy			= 5;//总充值
+	optional int32 head				= 6;//玩家头像
+	optional int32 power			= 7;//玩家战斗力
+	optional int32 sweeptimes		= 8;//当日扫荡次数
+	optional int32 screenspirits	= 9;//主界面式神ID 配表ID
+}
+
+message PlayerCurrency
+{
+	optional int32 rechargecash		= 1;//瑰玉 充值直接转换
+	optional int32 cash				= 2;//充值转换货币（勾玉）游戏内消耗使用
+	optional int32 vitality			= 3;//体力
+	optional string gold			= 4;//银币
+	optional int32 friendship		= 5;//友情点
+	optional int32 decree			= 6;//御札数量
+	optional int32 refine_point		= 7;//炼化石
+}
+
+//预留，主界面提示（红点和邮件数量等）
+message MainAnnoncement
+{
+}
+
+message DseUserInfo
+{
+	optional PlayerBaseInfo info		= 1;//玩家基本信息
+	optional PlayerCurrency currency	= 2;//玩家货币信息
+	optional MainAnnoncement announce	= 3;//提示
+}message EquipmentInfo
+{
+	optional string 	oid			= 1;//装备唯一ID
+	optional int32		tid			= 2;//装备配表ID
+	optional int32		enhanceLevel= 3;//强化等级
+	optional int32		refineLevle = 4;//精炼等级
+	optional int32		pos			= 5;//装备于（阵位）
+	optional int32		prop_value	= 6;//基础属性数值
+}enum EquipPos
+{
+	WEAPON = 1;	//武器
+	HEAD = 2;	//头盔
+	CHEST = 3;	//胸甲
+	BOOT = 4;	//战靴
+}
+
+message EquipmentInfoLite
+{
+	optional string 	oid			= 1;//装备唯一ID
+	optional EquipPos	pos			= 2;//装备位置
+}message MDropData
+{
+	optional int32		type = 1;
+	optional int32		index = 2;
+	optional int32		amount = 3;
+}
+
+message MDropList
+{
+	repeated MDropData		drops = 1;
+}message MItem
+{
+	optional int32			tid = 1;//物品配置ID
+	optional int32			amount = 2;//物品数量
+}enum MsgHead{
+	DceBattleStart=2048;
+	DceCombineProto=2049;
+	DceHeartbeat=2050;
+	DceResetLeader=2051;
+	DceShowSpiritInfo=2052;
+	DceShowFormationInfo=2053;
+	DceSwitchFormation=2054;
+	DceShowSingleSpiritInfo=2055;
+	DceBattleOpt=2056;
+	DceUserInfo=2057;
+	DceStageInfo=2058;
+	DceStageAward=2059;
+	DceStageExplore=2060;
+	DceStorageList=2061;
+	DceUseItem=2062;
+	DceBattleSweep=2063;
+	DceShopOpt=2064;
+	DceDecreeShopOpt=2065;
+	DceStageReset=2066;
+	DceSummon=2067;
+	DceSummonInterface=2068;
+	DceSpiritDevelop=2069;
+	DceCombineSpiritDebris=2070;
+	DceSpiritDebrisList=2071;
+	DceCombineEquipmentDebris=2072;
+	DceEquipmentDebrisList=2073;
+	DceAllEquipmentInfo=2074;
+	DceEquipmentGearUp=2075;
+	DceEquipmentEnhance=2076;
+	DceEquipmentRefine=2077;
+	DceTownPatrolOpt=2078;
+	DceDevilTowerOpt=2079;
+	DceMailOpt=2080;
+	DceChangeSpiritSkin=2081;
+	DceInstituteOpt=2082;
+
+	DseAuthState=512;
+	DseBattleStart=513;
+	DseCombineProto=514;
+	DseHeartbeat=515;
+	DseResetLeaderResult=516;
+	DseSingleSpiritInfo=517;
+	DseFormationInfo=518;
+	DseAllSpiritInfo=519;
+	DseBattleOpt=520;
+	DseUserInfo=521;
+	DseStageInfo=522;
+	DseStageAward=523;
+	DseStageExplore=524;
+	DseItemChange=525;
+	DseStorageList=526;
+	DseUseItem=527;
+	DseUpdateStage=528;
+	DseBattleSweep=529;
+	DseMainScreenReady=530;
+	DseShopOpt=531;
+	DseDecreeShopOpt=532;
+	DseStageReset=533;
+	DseUpdateSpiritInfo=534;
+	DseSummon=535;
+	DseSummonInterface=536;
+	DseSpiritDevelop=537;
+	DseSwitchFormation=538;
+	DseCombineSpiritDebris=539;
+	DseSpiritDebrisList=540;
+	DseCombineEquipmentDebris=541;
+	DseEquipmentDebrisList=542;
+	DseAllEquipmentInfo=543;
+	DseUpdateEquipmentInfo=544;
+	DseEquipmentGearUp=545;
+	DseEquipmentEnhance=546;
+	DseEquipmentRefine=547;
+	DseTownPatrolOpt=548;
+	DseDevilTowerOpt=549;
+	DseMailOpt=550;
+	DseChangeSpiritSkin=551;
+	DseReformInfo=552;
+	DseInstituteOpt=553;
+
+}
+message ShopUnit
+{
+	optional int32 shopid	= 1;//商品id
+	optional int32	count	= 2;//购买数量	
+}message SkillInfoLite
+{
+	optional int32 		pos			= 1;//技能位置
+	optional int32		tid			= 2;//技能配表ID
+	optional int32		level		= 3;
+}message SpiritInfoLite
+{
+	optional int32		pos		= 1;//式神上阵位置
+	optional int32		tid		= 2;//式神配表ID
+	optional bool		isCaptain = 3;//是否是队长
+}message StageData
+{
+	optional int32 stageid		= 1;//关卡id
+	optional int32 star			= 2;//星数
+	optional int32 todaytimes	= 3;//今日挑战次数
+	optional int32 todaybuy		= 4;//今日购买次数
+}
+
+message TacticInfo
+{
+	optional string 		uid			 = 1; //用户id
+	optional string			leaderid	 = 2[default="0"]; //leader式神ID
+	repeated BattleSpirits	spiritslist	 = 3; //出战式神列表
+}
+
+
